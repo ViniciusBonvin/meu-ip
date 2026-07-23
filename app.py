@@ -17,17 +17,50 @@ def home():
     with open(ARQUIVO, "a", encoding="utf-8") as f:
         f.write(f"{horario} | {ip}\n")
 
-    return f"""
+    return """
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Sucesso</title>
+
+<style>
+
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f4f4f4;
+    font-family:Arial, sans-serif;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+h1{
+    color:green;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
     <h1>IP registrado com sucesso!</h1>
+</div>
 
-    <h2>Seu IP:</h2>
-
-    <h3>{ip}</h3>
-
-    <br>
-
-    <a href="/ips">Ver todos os IPs registrados</a>
-    """
+</body>
+</html>
+"""
 
 
 @app.route("/ips")
